@@ -13,7 +13,7 @@
   --ta:#EF5350;--ta2:#FFEBEE;--ta3:#FFCDD2;
   --tb:#2196F3;--tb2:#E3F2FD;--tb3:#BBDEFB;
   --lo:#EC407A;--lo2:#FCE4EC;
-  --be:#F59E0B;--be2:#FFFBEB;--be3:#FDE68A;
+  --be:#F59E0B;--be2:#FFFBEB;
   --dbc:#7C3AED;--dbl:#EDE9FE;
   --swc:#0891B2;--swl:#ECFEFF;
   --gn:#16A34A;--gnl:#F0FDF4;
@@ -38,7 +38,6 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .pop-reveal{animation:popReveal .65s cubic-bezier(.34,1.56,.64,1) both;}
 .bg-flash{animation:bgFlash .9s ease both;}
 .flash{animation:flashGold 1.2s ease-in-out infinite;}
-
 .conf-piece{position:fixed;top:-20px;border-radius:3px;animation:confDrop linear both;pointer-events:none;z-index:999;}
 
 .page{min-height:100vh;padding:20px;background:linear-gradient(160deg,var(--cr) 0%,var(--cr2) 100%);}
@@ -56,10 +55,24 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .btn-primary:disabled::after{display:none;}
 .btn-gold{background:linear-gradient(135deg,#F59E0B,#D97706);box-shadow:0 8px 22px rgba(217,119,6,.4);}
 
-/* MAIN */
-.main-wrap{text-align:center;width:100%;max-width:420px;}
+/* ── SETUP ── */
+.setup-wrap{text-align:center;width:100%;max-width:420px;}
 .logo{font-size:68px;margin-bottom:14px;line-height:1;}
 .main-title{font-size:38px;font-weight:900;color:var(--br);letter-spacing:-1.5px;margin-bottom:6px;}
+.setup-sub{font-size:14px;color:var(--br2);line-height:1.8;margin-bottom:26px;}
+.setup-card{background:rgba(255,255,255,.9);border-radius:18px;padding:22px 22px 18px;
+  margin-bottom:20px;border:1.5px solid var(--ap);}
+.setup-field{margin-bottom:16px;text-align:left;}
+.setup-field:last-child{margin-bottom:0;}
+.setup-label{display:block;font-size:13px;font-weight:700;color:var(--br);margin-bottom:7px;}
+.setup-input{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid var(--ap);
+  font-size:16px;font-family:inherit;color:var(--br);background:#fff;outline:none;
+  transition:border-color .2s ease,box-shadow .2s ease;}
+.setup-input:focus{border-color:var(--co);box-shadow:0 0 0 3px rgba(255,140,107,.15);}
+.footer-note{margin-top:13px;font-size:12px;color:var(--br3);}
+
+/* ── MAIN ── */
+.main-wrap{text-align:center;width:100%;max-width:420px;}
 .main-sub{font-size:14px;color:var(--br2);line-height:1.9;margin-bottom:26px;}
 .main-sub strong{color:var(--co2);}
 .rules-card{background:rgba(255,255,255,.88);border-radius:18px;padding:20px 22px;margin-bottom:24px;border:1.5px solid var(--ap);}
@@ -68,10 +81,8 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .rule-row.last{border-bottom:none;}
 .sc-g{font-weight:700;color:var(--gn);}.sc-y{font-weight:700;color:var(--gy);}.sc-r{font-weight:700;color:var(--rd);}
 .item-note{margin-top:13px;padding:10px 13px;background:var(--pk);border-radius:10px;font-size:12px;color:var(--br2);line-height:1.7;}
-.hidden-note{margin-top:8px;padding:8px 13px;background:var(--gdl);border-radius:10px;font-size:12px;color:var(--gd);font-weight:700;border:1px solid #FCD34D;}
-.footer-note{margin-top:13px;font-size:12px;color:var(--br3);}
 
-/* GAME */
+/* ── GAME ── */
 .game-wrap{max-width:520px;margin:0 auto;}
 .hidden-banner{background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;
   border-radius:12px;padding:10px 16px;text-align:center;font-size:14px;font-weight:700;
@@ -95,12 +106,10 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .prog-dot.pend{width:8px;background:var(--pk);}
 .prog-dot.hid{width:28px;background:var(--gd);}
 .teams-row{display:flex;gap:10px;margin-bottom:14px;}
-
-/* team panel */
 .team-panel{flex:1;border-radius:16px;padding:14px 12px;}
 .team-panel.a{background:var(--ta2);border:1.5px solid var(--ta3);}
 .team-panel.b{background:var(--tb2);border:1.5px solid var(--tb3);}
-.team-name{text-align:center;font-size:17px;font-weight:900;margin-bottom:12px;}
+.team-name{text-align:center;font-size:15px;font-weight:900;margin-bottom:12px;word-break:keep-all;}
 .team-panel.a .team-name{color:var(--ta);}.team-panel.b .team-name{color:var(--tb);}
 .sec-lbl{font-size:10px;font-weight:600;color:var(--gy);margin-bottom:7px;letter-spacing:.3px;}
 .card-row{display:flex;gap:7px;margin-bottom:12px;}
@@ -124,8 +133,6 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .item-btn .badge{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;
   background:#FF5252;color:#fff;font-size:10px;font-weight:900;
   display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(255,82,82,.4);}
-
-/* priority note */
 .priority-note{background:#fff;border-radius:10px;padding:8px 12px;margin-top:10px;
   font-size:10px;color:var(--br3);text-align:center;border:1px solid var(--pk);}
 
@@ -138,7 +145,7 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .mini-hist td{text-align:center;padding:5px 2px;border-top:1px solid var(--pk);}
 .mini-hist tr.hidden-row td{background:var(--gdl);}
 
-/* RESULT */
+/* ── RESULT ── */
 .result-wrap{width:100%;max-width:480px;}
 .result-hdr{text-align:center;margin-bottom:18px;}
 .result-rlbl{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--br3);margin-bottom:4px;}
@@ -147,7 +154,7 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .reveal-card{flex:1;background:#fff;border-radius:16px;padding:14px 11px;text-align:center;}
 .reveal-card.a{border:2px solid var(--ta3);box-shadow:0 4px 14px rgba(239,83,80,.1);}
 .reveal-card.b{border:2px solid var(--tb3);box-shadow:0 4px 14px rgba(33,150,243,.1);}
-.rev-team{font-size:11px;font-weight:700;margin-bottom:7px;}
+.rev-team{font-size:11px;font-weight:700;margin-bottom:7px;word-break:keep-all;}
 .reveal-card.a .rev-team{color:var(--ta);}.reveal-card.b .rev-team{color:var(--tb);}
 .rev-cross{font-size:11px;color:var(--gy);text-decoration:line-through;margin-bottom:1px;}
 .rev-emoji{font-size:40px;margin-bottom:4px;line-height:1;}
@@ -165,41 +172,31 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
   display:flex;justify-content:space-around;align-items:center;
   box-shadow:0 2px 10px rgba(176,96,64,.07);margin-bottom:18px;}
 .tot-blk{text-align:center;}
-.tot-lbl{font-size:10px;font-weight:600;color:var(--gy);margin-bottom:2px;}
+.tot-lbl{font-size:10px;font-weight:600;color:var(--gy);margin-bottom:2px;word-break:keep-all;}
 .tot-num{font-size:32px;font-weight:900;line-height:1;}
 .tot-num.a{color:var(--ta);}.tot-num.b{color:var(--tb);}
 .tot-sep{width:1px;height:40px;background:var(--pk);}
 
-/* HIDDEN REVEAL SCREEN */
+/* ── HIDDEN REVEAL ── */
 .hidden-wrap{width:100%;max-width:460px;text-align:center;}
-.hidden-icon{font-size:72px;margin-bottom:16px;line-height:1;}
-.hidden-title{font-size:30px;font-weight:900;color:var(--gd);margin-bottom:8px;letter-spacing:-1px;}
-.hidden-desc{font-size:14px;color:var(--br2);line-height:1.9;margin-bottom:24px;}
-.hidden-score-box{background:#fff;border-radius:18px;padding:22px;margin-bottom:22px;
-  box-shadow:0 4px 20px rgba(217,119,6,.12);border:2px solid #FCD34D;}
-.hidden-score-box h4{font-size:13px;font-weight:700;color:var(--br);margin-bottom:16px;}
 .hid-scores{display:flex;justify-content:space-around;align-items:center;}
 .hid-team{text-align:center;}
-.hid-team-lbl{font-size:11px;font-weight:700;margin-bottom:4px;}
+.hid-team-lbl{font-size:11px;font-weight:700;margin-bottom:4px;word-break:keep-all;}
 .hid-team-lbl.a{color:var(--ta);}.hid-team-lbl.b{color:var(--tb);}
 .hid-big{font-size:44px;font-weight:900;line-height:1;}
 .hid-big.a{color:var(--ta);}.hid-big.b{color:var(--tb);}
 .hid-colon{font-size:20px;color:var(--ap);font-weight:700;}
-.item-reset-box{background:var(--gdl);border-radius:14px;padding:14px 18px;margin-bottom:22px;
-  border:1.5px solid #FCD34D;}
-.item-reset-box p{font-size:13px;color:var(--gd);font-weight:700;margin-bottom:8px;}
-.item-reset-box ul{font-size:12px;color:var(--br2);line-height:2;list-style:none;padding:0;}
 
-/* FINAL */
+/* ── FINAL ── */
 .final-wrap{width:100%;max-width:480px;padding-top:8px;}
 .winner-card{background:#fff;border-radius:22px;padding:26px 22px;text-align:center;
   box-shadow:0 6px 28px rgba(176,96,64,.11);border:1.5px solid var(--ap);margin-bottom:16px;}
 .trophy{font-size:58px;margin-bottom:12px;line-height:1;}
-.winner-txt{font-size:26px;font-weight:900;margin-bottom:6px;}
+.winner-txt{font-size:26px;font-weight:900;margin-bottom:6px;word-break:keep-all;}
 .winner-sub{font-size:13px;color:var(--br3);}
 .score-compare{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px;}
 .sc-team{text-align:center;}
-.sc-team-lbl{font-size:11px;font-weight:700;margin-bottom:4px;}
+.sc-team-lbl{font-size:11px;font-weight:700;margin-bottom:4px;word-break:keep-all;}
 .sc-team-lbl.a{color:var(--ta);}.sc-team-lbl.b{color:var(--tb);}
 .sc-big{font-size:46px;font-weight:900;line-height:1;}
 .sc-big.a{color:var(--ta);}.sc-big.b{color:var(--tb);}
@@ -213,7 +210,6 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 .hist-card td{text-align:center;padding:7px 4px;border-top:1px solid var(--pk);}
 .hist-total{border-top:2px solid var(--ap)!important;background:var(--cr);}
 .hist-hidden{background:var(--gdl)!important;}
-.hist-hidden td:first-child::after{content:' ⚡';font-size:10px;}
 .reflect{background:linear-gradient(135deg,var(--lo2),var(--pk));border-radius:14px;padding:16px 20px;
   text-align:center;border:1.5px solid var(--ap);margin-bottom:20px;}
 .reflect p{font-size:13px;color:var(--br);line-height:1.85;}
@@ -224,10 +220,9 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--cr);mi
 <body>
 <div id="root"></div>
 <script>
-const TR = 5;       /* 일반 라운드 수 */
-const MAX = 6;      /* 히든 포함 최대 라운드 */
+const TR  = 5;
+const MAX = 6;
 
-/* 점수표 - 선택한 카드 기준 */
 const SM = {
   'love,love':      [ 3,  3],
   'love,benefit':   [ 0,  5],
@@ -238,111 +233,131 @@ const SM = {
 function mkSel()   { return {aCard:null,bCard:null,aDouble:false,bDouble:false,aSwitch:false,bSwitch:false}; }
 function mkItems() { return {A:{double:2,switch:1},B:{double:2,switch:1}}; }
 
-let S = resetState('main');
-function resetState(screen) {
-  return { screen, round:1, scores:{A:0,B:0}, history:[], items:mkItems(), sel:mkSel(), result:null };
+/* 전역 상태 — teamA/teamB는 게임 재시작 시에도 유지 */
+let S = {
+  screen:'setup', teamA:'', teamB:'',
+  round:1, scores:{A:0,B:0}, history:[], items:mkItems(), sel:mkSel(), result:null,
+};
+
+function newGame() {
+  S.screen  = 'playing';
+  S.round   = 1;
+  S.scores  = {A:0,B:0};
+  S.history = [];
+  S.items   = mkItems();
+  S.sel     = mkSel();
+  S.result  = null;
 }
 
+/* ── 헬퍼 ── */
+const tN  = t => t==='A' ? S.teamA : S.teamB;           /* 팀 이름 */
+const tLb = t => t==='A' ? `🔴 ${S.teamA}` : `🔵 ${S.teamB}`; /* 이모지 + 이름 */
+const scoreClass = n => n>0?'gn':n<0?'rd':'gy-w';
+const scoreSign  = n => (n>0?'+':'')+n;
+const cardEmoji  = c => c==='love'?'❤️':'💰';
+const cardName   = c => c==='love'?'사랑 카드':'편익 카드';
+const isHidRound = () => S.round > TR;
+
 /* ── 액션 ── */
-window.startGame = () => { S = resetState('playing'); render(); };
+window.setTeams = () => {
+  const a = (document.getElementById('inp-a').value||'').trim() || 'A팀';
+  const b = (document.getElementById('inp-b').value||'').trim() || 'B팀';
+  S.teamA = a;
+  S.teamB = b;
+  S.screen = 'main';
+  render();
+};
+
+window.startGame = () => { newGame(); render(); };
+
+window.restartGame = () => { S.screen = 'setup'; render(); };
 
 window.selectCard = (team, card) => {
-  const k = team==='A' ? 'aCard' : 'bCard';
-  S.sel[k] = S.sel[k] === card ? null : card;
+  const k = team==='A'?'aCard':'bCard';
+  S.sel[k] = S.sel[k]===card ? null : card;
   render();
 };
 
 window.toggleItem = (team, type) => {
-  const k = team==='A' ? (type==='double'?'aDouble':'aSwitch') : (type==='double'?'bDouble':'bSwitch');
-  if (!S.sel[k] && S.items[team][type] === 0) return;
+  const k = team==='A'?(type==='double'?'aDouble':'aSwitch'):(type==='double'?'bDouble':'bSwitch');
+  if (!S.sel[k] && S.items[team][type]===0) return;
   S.sel[k] = !S.sel[k];
   render();
 };
 
 window.confirmRound = () => {
   const {aCard,bCard,aDouble,bDouble,aSwitch,bSwitch} = S.sel;
-
-  /* 1순위: ×2 계산 (선택한 카드 기준 기본 점수에 배수 적용) */
-  const [ab, bb] = SM[aCard+','+bCard];
+  /* 1순위: ×2 */
+  const [ab,bb] = SM[aCard+','+bCard];
   let aScore = aDouble ? ab*2 : ab;
   let bScore = bDouble ? bb*2 : bb;
-
-  /* 2순위: 스위치 → 점수 교환 (양팀 동시 사용 시 상쇄) */
+  /* 2순위: 스위치 → 점수 교환 */
   let scoreSwapped = false;
-  if ((aSwitch || bSwitch) && !(aSwitch && bSwitch)) {
-    [aScore, bScore] = [bScore, aScore];
+  if ((aSwitch||bSwitch) && !(aSwitch&&bSwitch)) {
+    [aScore,bScore] = [bScore,aScore];
     scoreSwapped = true;
   }
-
-  S.scores.A += aScore;
-  S.scores.B += bScore;
+  S.scores.A += aScore; S.scores.B += bScore;
   S.result = {
-    round: S.round, isHidden: S.round > TR,
-    aCard, bCard, aDouble, bDouble, aSwitch, bSwitch,
-    aBaseScore: aDouble?ab*2:ab, bBaseScore: bDouble?bb*2:bb,
+    round:S.round, isHidden:S.round>TR,
+    aCard,bCard,aDouble,bDouble,aSwitch,bSwitch,
+    aBaseScore:aDouble?ab*2:ab, bBaseScore:bDouble?bb*2:bb,
     scoreSwapped, aScore, bScore,
   };
   S.history.push({...S.result, totalA:S.scores.A, totalB:S.scores.B});
-  S.items.A.double -= aDouble?1:0; S.items.A.switch -= aSwitch?1:0;
-  S.items.B.double -= bDouble?1:0; S.items.B.switch -= bSwitch?1:0;
-  S.screen = 'roundResult';
+  S.items.A.double-=aDouble?1:0; S.items.A.switch-=aSwitch?1:0;
+  S.items.B.double-=bDouble?1:0; S.items.B.switch-=bSwitch?1:0;
+  S.screen='roundResult';
   render();
 };
 
 window.nextRound = () => {
-  if (S.round >= MAX)      { S.screen = 'final'; }
-  else if (S.round === TR) { S.screen = 'hidden'; }
+  if (S.round>=MAX)      { S.screen='final'; }
+  else if (S.round===TR) { S.screen='hidden'; }
   else {
     S.round++;
-    S.sel = mkSel();
-    S.screen = 'playing';
+    S.sel=mkSel();
+    S.screen='playing';
   }
   render();
 };
 
 window.startHiddenRound = () => {
-  S.round = TR + 1;
-  S.items = mkItems(); /* 아이템 초기화 */
-  S.sel   = mkSel();
-  S.screen = 'playing';
+  S.round=TR+1;
+  S.items=mkItems();
+  S.sel=mkSel();
+  S.screen='playing';
   render();
 };
 
-window.restartGame = () => { S = resetState('main'); render(); };
-
-/* ── 헬퍼 ── */
-const scoreClass = n => n>0?'gn':n<0?'rd':'gy-w';
-const scoreSign  = n => (n>0?'+':'')+n;
-const cardEmoji  = c => c==='love'?'❤️':'💰';
-const cardName   = c => c==='love'?'사랑 카드':'편익 카드';
-const isHiddenRound = () => S.round > TR;
-
+/* ── 진행 바 ── */
 function dots() {
-  if (isHiddenRound()) {
-    return Array.from({length:TR}, ()=>'<div class="prog-dot done"></div>').join('')
-      + '<div class="prog-dot hid flash"></div>';
+  if (isHidRound()) {
+    return Array.from({length:TR},()=>'<div class="prog-dot done"></div>').join('')
+      +'<div class="prog-dot hid flash"></div>';
   }
-  return Array.from({length:TR}, (_,i) => {
-    const cls = i+1<S.round?'done':i+1===S.round?'cur':'pend';
+  return Array.from({length:TR},(_,i)=>{
+    const cls=i+1<S.round?'done':i+1===S.round?'cur':'pend';
     return `<div class="prog-dot ${cls}"></div>`;
   }).join('');
 }
 
+/* ── 팀 패널 ── */
 function teamPanel(team) {
   const tk  = team==='A'?'a':'b';
-  const card = S.sel[tk+'Card'];
-  const dbl  = S.sel[tk+'Double'];
-  const sw   = S.sel[tk+'Switch'];
-  const it   = S.items[team];
-  const lcls = 'card-btn love btn'+(card==='love'?' selected':'');
-  const bcls = 'card-btn benefit btn'+(card==='benefit'?' selected':'');
-  const dcls = 'item-btn double btn'+(dbl?' on':'');
-  const scls = 'item-btn switch btn'+(sw?' on':'');
-  const ddis = !dbl&&it.double===0?'disabled':'';
-  const sdis = !sw&&it.switch===0?'disabled':'';
+  const card=S.sel[tk+'Card'];
+  const dbl =S.sel[tk+'Double'];
+  const sw  =S.sel[tk+'Switch'];
+  const it  =S.items[team];
+  const lcls='card-btn love btn'+(card==='love'?' selected':'');
+  const bcls='card-btn benefit btn'+(card==='benefit'?' selected':'');
+  const dcls='item-btn double btn'+(dbl?' on':'');
+  const scls='item-btn switch btn'+(sw?' on':'');
+  const ddis=!dbl&&it.double===0?'disabled':'';
+  const sdis=!sw&&it.switch===0?'disabled':'';
   return `
   <div class="team-panel ${team.toLowerCase()}">
-    <div class="team-name">${team==='A'?'🔴 A팀':'🔵 B팀'}</div>
+    <div class="team-name">${tLb(team)}</div>
     <div class="sec-lbl">카드 선택</div>
     <div class="card-row">
       <button class="${lcls}" onclick="selectCard('${team}','love')">
@@ -366,9 +381,10 @@ function teamPanel(team) {
   </div>`;
 }
 
+/* ── 미니 히스토리 ── */
 function miniHistory() {
   if (!S.history.length) return '';
-  const rows = S.history.map(h => `
+  const rows = S.history.map(h=>`
     <tr class="${h.isHidden?'hidden-row':''}">
       <td style="font-weight:700;color:${h.isHidden?'var(--gd)':'var(--br2)'}">${h.isHidden?'⚡':h.round}</td>
       <td>${cardEmoji(h.aCard)}${h.aDouble?'<sup style="font-size:9px;color:var(--dbc)">×2</sup>':''}${h.aSwitch?'<sup style="font-size:9px;color:var(--swc)">🔀</sup>':''}</td>
@@ -380,12 +396,41 @@ function miniHistory() {
   <div class="mini-hist">
     <h4>📊 점수 기록</h4>
     <table><thead><tr>
-      <th>R</th><th>A팀</th><th>B팀</th><th class="a">A점</th><th class="b">B점</th>
+      <th>R</th><th>${S.teamA}</th><th>${S.teamB}</th>
+      <th class="a">A점</th><th class="b">B점</th>
     </tr></thead><tbody>${rows}</tbody></table>
   </div>`;
 }
 
-/* ── 화면 HTML ── */
+/* ════════════════════════════════
+   화면 HTML 생성 함수들
+   ════════════════════════════════ */
+
+function htmlSetup() {
+  return `
+  <div class="page center">
+  <div class="setup-wrap fade-up">
+    <div class="logo float-y">🕊️</div>
+    <h1 class="main-title">정직한 게임</h1>
+    <p class="setup-sub">죄수의 딜레마를 넘어<br><strong style="color:var(--co2)">사랑의 힘</strong>으로 함께 이기는 게임</p>
+    <div class="setup-card">
+      <div class="setup-field">
+        <label class="setup-label">🔴 1팀 이름</label>
+        <input class="setup-input" id="inp-a" type="text" placeholder="A팀" maxlength="12"
+          value="${S.teamA}" autocomplete="off">
+      </div>
+      <div class="setup-field">
+        <label class="setup-label">🔵 2팀 이름</label>
+        <input class="setup-input" id="inp-b" type="text" placeholder="B팀" maxlength="12"
+          value="${S.teamB}" autocomplete="off">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="setTeams()">다음 →</button>
+    <p class="footer-note">A팀 vs B팀</p>
+  </div>
+  </div>`;
+}
+
 function htmlMain() {
   return `
   <div class="page center">
@@ -395,30 +440,32 @@ function htmlMain() {
     <p class="main-sub">죄수의 딜레마를 넘어<br><strong>사랑의 힘</strong>으로 함께 이기는 게임</p>
     <div class="rules-card">
       <h3>📋 라운드 점수 규칙</h3>
-      <div class="rule-row"><span>A: ❤️ 사랑 · B: ❤️ 사랑</span><span class="sc-g">+3 / +3</span></div>
-      <div class="rule-row"><span>A: ❤️ 사랑 · B: 💰 편익</span><span class="sc-y">0 / +5</span></div>
-      <div class="rule-row"><span>A: 💰 편익 · B: ❤️ 사랑</span><span class="sc-y">+5 / 0</span></div>
-      <div class="rule-row last"><span>A: 💰 편익 · B: 💰 편익</span><span class="sc-r">-2 / -2</span></div>
+      <div class="rule-row"><span>❤️ 사랑 · ❤️ 사랑</span><span class="sc-g">+3 / +3</span></div>
+      <div class="rule-row"><span>❤️ 사랑 · 💰 편익</span><span class="sc-y">0 / +5</span></div>
+      <div class="rule-row"><span>💰 편익 · ❤️ 사랑</span><span class="sc-y">+5 / 0</span></div>
+      <div class="rule-row last"><span>💰 편익 · 💰 편익</span><span class="sc-r">-2 / -2</span></div>
       <div class="item-note">✕2 카드 (팀당 2장, 점수 2배) · 🔀 스위치 (팀당 1장, 점수 교환)<br>
         <strong>우선순위:</strong> ×2 먼저 계산 → 스위치로 점수 교환</div>
     </div>
     <button class="btn-primary" onclick="startGame()">🎮 게임 시작하기</button>
-    <p class="footer-note">A팀 vs B팀</p>
+    <p class="footer-note" style="margin-top:10px;">
+      <span style="cursor:pointer;text-decoration:underline;color:var(--br3);" onclick="restartGame()">← 팀 이름 변경</span>
+    </p>
   </div>
   </div>`;
 }
 
 function htmlPlaying() {
-  const hidden = isHiddenRound();
+  const hidden = isHidRound();
   const canConfirm = !!(S.sel.aCard && S.sel.bCard);
   const roundTot = hidden ? '<span style="color:var(--gd)">히든</span>' : `/ ${TR}`;
   return `
   <div class="page">
   <div class="game-wrap">
-    ${hidden ? '<div class="hidden-banner">⚡ 히든 라운드 — 아이템이 초기화되었습니다!</div>' : ''}
+    ${hidden?'<div class="hidden-banner">⚡ 히든 라운드 — 아이템이 초기화되었습니다!</div>':''}
     <div class="score-header">
       <div class="score-box a">
-        <div class="score-lbl">🔴 A팀</div>
+        <div class="score-lbl">🔴 ${S.teamA}</div>
         <div class="score-num a">${S.scores.A}</div>
       </div>
       <div class="round-mid">
@@ -427,7 +474,7 @@ function htmlPlaying() {
         <div class="round-tot">${roundTot}</div>
       </div>
       <div class="score-box b">
-        <div class="score-lbl">🔵 B팀</div>
+        <div class="score-lbl">🔵 ${S.teamB}</div>
         <div class="score-num b">${S.scores.B}</div>
       </div>
     </div>
@@ -436,7 +483,7 @@ function htmlPlaying() {
       ${teamPanel('A')}
       ${teamPanel('B')}
     </div>
-    <div class="priority-note">📌 아이템 우선순위: ✕2 점수 계산 → 🔀 스위치로 점수 교환</div>
+    <div class="priority-note">📌 ×2 점수 계산 우선 → 🔀 스위치로 점수 교환</div>
     <br>
     <button class="btn-primary ${hidden?'btn-gold':''}" onclick="confirmRound()" ${canConfirm?'':'disabled'}>
       ${canConfirm?'✅ 라운드 확정하기':'양팀 모두 카드를 선택해주세요'}
@@ -448,36 +495,35 @@ function htmlPlaying() {
 
 function htmlResult() {
   const r = S.result;
-  const isLast = r.round >= MAX;
+  const isLast       = r.round >= MAX;
   const isNormalLast = r.round === TR;
 
   const outcome = (() => {
-    if (r.aCard==='love'&&r.bCard==='love') return {txt:'🌟 두 팀 모두 사랑을 선택했어요!',bg:'var(--gnl)',c:'var(--gn)'};
-    if (r.aCard==='benefit'&&r.bCard==='benefit') return {txt:'😢 두 팀 모두 편익을 선택했어요...',bg:'#FFF5F5',c:'var(--rd)'};
-    if (r.aCard==='love') return {txt:'🌊 B팀이 편익을 선택했어요',bg:'var(--dbl)',c:'var(--dbc)'};
-    return {txt:'🌊 A팀이 편익을 선택했어요',bg:'var(--dbl)',c:'var(--dbc)'};
+    if (r.aCard==='love'&&r.bCard==='love') return {txt:`🌟 두 팀 모두 사랑을 선택했어요!`,bg:'var(--gnl)',c:'var(--gn)'};
+    if (r.aCard==='benefit'&&r.bCard==='benefit') return {txt:`😢 두 팀 모두 편익을 선택했어요...`,bg:'#FFF5F5',c:'var(--rd)'};
+    if (r.aCard==='love') return {txt:`🌊 ${S.teamB}이(가) 편익을 선택했어요`,bg:'var(--dbl)',c:'var(--dbc)'};
+    return {txt:`🌊 ${S.teamA}이(가) 편익을 선택했어요`,bg:'var(--dbl)',c:'var(--dbc)'};
   })();
 
-  /* 결과 카드: 고른 카드 표시, 점수는 우선순위 반영 */
   const revCard = (side, card, dbl, sw, baseScore, finalScore, swapped) => {
+    const label = side==='a' ? tLb('A') : tLb('B');
     const tags = [
-      dbl ? '<span class="tag dbl">✕2 사용</span>' : '',
-      sw  ? '<span class="tag sw">🔀 스위치</span>' : '',
+      dbl?'<span class="tag dbl">✕2 사용</span>':'',
+      sw ?'<span class="tag sw">🔀 스위치</span>':'',
     ].join('');
     return `
     <div class="reveal-card ${side} scale-in">
-      <div class="rev-team">${side==='a'?'🔴 A팀':'🔵 B팀'}</div>
+      <div class="rev-team">${label}</div>
       <div class="rev-emoji">${cardEmoji(card)}</div>
       <div class="rev-name">${cardName(card)}</div>
       <div class="tag-row">${tags}</div>
-      ${swapped ? `<div class="rev-cross">${scoreSign(baseScore)}점 → 교환</div>` : ''}
+      ${swapped?`<div class="rev-cross">${scoreSign(baseScore)}점 → 교환</div>`:''}
       <div class="rev-score ${scoreClass(finalScore)}">${scoreSign(finalScore)}점</div>
     </div>`;
   };
 
-  const showPriority = (r.aDouble||r.bDouble) && (r.aSwitch||r.bSwitch) && !r.scoreSwapped===false;
   const priorityExplain = (r.aDouble||r.bDouble) && r.scoreSwapped
-    ? `<div class="priority-explain">✕2 적용 후 점수 교환 — ${r.aDouble?'A팀 점수 2배':''}${r.aDouble&&r.bDouble?' · ':''}${r.bDouble?'B팀 점수 2배':''}, 이후 🔀 스위치로 점수 교환</div>`
+    ? `<div class="priority-explain">✕2 적용 후 점수 교환 — ${r.aDouble?`${S.teamA} 점수 2배`:''}${r.aDouble&&r.bDouble?' · ':''}${r.bDouble?`${S.teamB} 점수 2배`:''}, 이후 🔀 점수 교환</div>`
     : '';
 
   const btnTxt = isLast ? '🏆 최종 결과 보기'
@@ -501,9 +547,9 @@ function htmlResult() {
     </div>
     ${priorityExplain}
     <div class="totals-box fade-up">
-      <div class="tot-blk"><div class="tot-lbl">🔴 A팀 누계</div><div class="tot-num a">${S.scores.A}</div></div>
+      <div class="tot-blk"><div class="tot-lbl">🔴 ${S.teamA} 누계</div><div class="tot-num a">${S.scores.A}</div></div>
       <div class="tot-sep"></div>
-      <div class="tot-blk"><div class="tot-lbl">🔵 B팀 누계</div><div class="tot-num b">${S.scores.B}</div></div>
+      <div class="tot-blk"><div class="tot-lbl">🔵 ${S.teamB} 누계</div><div class="tot-num b">${S.scores.B}</div></div>
     </div>
     <button class="btn-primary ${isNormalLast?'btn-gold':''}" onclick="nextRound()">${btnTxt}</button>
   </div>
@@ -522,24 +568,22 @@ function htmlHidden() {
         마지막 라운드가 열렸습니다!<br>아이템이 <strong style="color:#FDE68A">모두 초기화</strong>됩니다.
       </div>
     </div>
-
     <div class="pop-reveal" style="animation-delay:.15s;background:rgba(255,255,255,.95);
       border-radius:20px;padding:20px 22px;margin-bottom:16px;
       border:2px solid #FCD34D;box-shadow:0 8px 32px rgba(217,119,6,.3);">
       <div style="font-size:12px;font-weight:700;color:var(--br);margin-bottom:14px;text-align:center;">📊 현재 점수</div>
       <div class="hid-scores">
         <div class="hid-team">
-          <div class="hid-team-lbl a">🔴 A팀</div>
+          <div class="hid-team-lbl a">🔴 ${S.teamA}</div>
           <div class="hid-big a">${S.scores.A}</div>
         </div>
         <div class="hid-colon">:</div>
         <div class="hid-team">
-          <div class="hid-team-lbl b">🔵 B팀</div>
+          <div class="hid-team-lbl b">🔵 ${S.teamB}</div>
           <div class="hid-big b">${S.scores.B}</div>
         </div>
       </div>
     </div>
-
     <div class="pop-reveal" style="animation-delay:.28s;background:rgba(255,251,235,.95);
       border-radius:14px;padding:14px 18px;margin-bottom:24px;border:1.5px solid #FCD34D;">
       <p style="font-size:13px;font-weight:700;color:var(--gd);margin-bottom:8px;">🎁 아이템 초기화</p>
@@ -548,7 +592,6 @@ function htmlHidden() {
         <li>🔀 스위치 카드 — 팀당 1장</li>
       </ul>
     </div>
-
     <div class="pop-reveal" style="animation-delay:.4s;">
       <button class="btn-primary btn-gold" onclick="startHiddenRound()"
         style="font-size:18px;padding:18px;letter-spacing:-.5px;">
@@ -561,21 +604,18 @@ function htmlHidden() {
 
 function htmlFinal() {
   const {A,B} = S.scores;
-  const diff = A-B;
-  const tie  = diff===0;
-  const aWin = diff>0;
-  const winColor = tie?'var(--br2)':aWin?'var(--ta)':'var(--tb)';
-  const aLove = S.history.filter(h=>h.aCard==='love').length;
-  const bLove = S.history.filter(h=>h.bCard==='love').length;
-  const totalLove = aLove+bLove;
-
-  const reflect = totalLove >= 9
+  const diff=A-B, tie=diff===0, aWin=diff>0;
+  const winColor=tie?'var(--br2)':aWin?'var(--ta)':'var(--tb)';
+  const aLove=S.history.filter(h=>h.aCard==='love').length;
+  const bLove=S.history.filter(h=>h.bCard==='love').length;
+  const totalLove=aLove+bLove;
+  const reflect = totalLove>=9
     ? '두 팀이 서로 사랑을 많이 선택했어요! 신뢰가 쌓이면 모두가 함께 이길 수 있어요. 💛'
-    : totalLove >= 5
+    : totalLove>=5
     ? '사랑과 편익 사이에서 고민했군요. 신뢰가 쌓일수록 사랑의 힘이 빛납니다! 🌱'
     : '이번엔 편익을 많이 선택했네요. 다음번엔 사랑으로 함께 이겨봐요! 😊';
 
-  const histRows = S.history.map(h => `
+  const histRows = S.history.map(h=>`
     <tr class="${h.isHidden?'hist-hidden':''}">
       <td style="font-weight:700;color:${h.isHidden?'var(--gd)':'var(--br2)'}">${h.isHidden?'⚡':h.round}</td>
       <td>${cardEmoji(h.aCard)}${h.aDouble?'<sup style="font-size:9px;color:var(--dbc)">×2</sup>':''}${h.aSwitch?'<sup style="font-size:9px">🔀</sup>':''}</td>
@@ -584,22 +624,26 @@ function htmlFinal() {
       <td class="${scoreClass(h.bScore)}">${scoreSign(h.bScore)}</td>
     </tr>`).join('');
 
+  const winnerTxt = tie ? '무승부!' : aWin ? `${S.teamA} 우승!` : `${S.teamB} 우승!`;
+  const winnerSub = tie ? '양팀 동점이에요!'
+    : `${Math.abs(diff)}점 차로 ${aWin?S.teamA:S.teamB}이(가) 승리했어요!`;
+
   return `
   <div class="page center">
   <div class="final-wrap fade-up">
     <div class="winner-card">
       <div class="trophy float-y">${tie?'🤝':'🏆'}</div>
-      <div class="winner-txt" style="color:${winColor}">${tie?'무승부!':aWin?'A팀 우승!':'B팀 우승!'}</div>
-      ${!tie?`<div class="winner-sub">${Math.abs(diff)}점 차로 ${aWin?'A팀':'B팀'}이 승리했어요!</div>`:'<div class="winner-sub">양팀 동점이에요!</div>'}
+      <div class="winner-txt" style="color:${winColor}">${winnerTxt}</div>
+      <div class="winner-sub">${winnerSub}</div>
       <div class="score-compare">
         <div class="sc-team">
-          <div class="sc-team-lbl a">🔴 A팀</div>
+          <div class="sc-team-lbl a">🔴 ${S.teamA}</div>
           <div class="sc-big a">${A}</div>
           <div class="sc-love">❤️ ${aLove}번</div>
         </div>
         <div class="sc-colon">:</div>
         <div class="sc-team">
-          <div class="sc-team-lbl b">🔵 B팀</div>
+          <div class="sc-team-lbl b">🔵 ${S.teamB}</div>
           <div class="sc-big b">${B}</div>
           <div class="sc-love">❤️ ${bLove}번</div>
         </div>
@@ -609,7 +653,7 @@ function htmlFinal() {
       <h4>📊 전체 라운드 기록</h4>
       <table>
         <thead><tr>
-          <th>R</th><th>A팀</th><th>B팀</th>
+          <th>R</th><th>${S.teamA}</th><th>${S.teamB}</th>
           <th class="a">A점수</th><th class="b">B점수</th>
         </tr></thead>
         <tbody>
@@ -644,7 +688,7 @@ function spawnConfetti() {
 
 /* ── 렌더 ── */
 function render() {
-  const map = {main:htmlMain, playing:htmlPlaying, roundResult:htmlResult, hidden:htmlHidden, final:htmlFinal};
+  const map={setup:htmlSetup,main:htmlMain,playing:htmlPlaying,roundResult:htmlResult,hidden:htmlHidden,final:htmlFinal};
   document.getElementById('root').innerHTML = map[S.screen]();
   if(S.screen==='final') setTimeout(spawnConfetti,100);
 }

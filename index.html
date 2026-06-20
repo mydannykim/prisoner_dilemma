@@ -304,7 +304,7 @@ window.startHiddenRound = () => {
   render();
 };
 
-window.restartGame = window.startGame;
+window.restartGame = () => { S = resetState('main'); render(); };
 
 /* ── 헬퍼 ── */
 const scoreClass = n => n>0?'gn':n<0?'rd':'gy-w';
@@ -397,10 +397,9 @@ function htmlMain() {
       <div class="rule-row last"><span>A: 💰 편익 · B: 💰 편익</span><span class="sc-r">-2 / -2</span></div>
       <div class="item-note">✕2 카드 (팀당 2장, 점수 2배) · 🔀 스위치 (팀당 1장, 점수 교환)<br>
         <strong>우선순위:</strong> ×2 먼저 계산 → 스위치로 점수 교환</div>
-      <div class="hidden-note">⚡ 5라운드 후 히든 라운드 공개! 아이템이 초기화됩니다</div>
     </div>
     <button class="btn-primary" onclick="startGame()">🎮 게임 시작하기</button>
-    <p class="footer-note">5라운드 + 히든 1라운드 · A팀 vs B팀</p>
+    <p class="footer-note">A팀 vs B팀</p>
   </div>
   </div>`;
 }

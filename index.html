@@ -96,87 +96,87 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:linear-gradi
 /* ══════════════════════════════════
    PLAYING 화면
 ══════════════════════════════════ */
-.playing-page{min-height:100vh;padding:28px 48px;display:flex;flex-direction:column;}
-.game-wrap{width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;flex:1;}
+.playing-page{height:100vh;padding:16px 40px;display:flex;flex-direction:column;overflow:hidden;}
+.game-wrap{width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;flex:1;min-height:0;}
 .hidden-banner{background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;
-  border-radius:14px;padding:14px 24px;text-align:center;font-size:20px;font-weight:700;
-  margin-bottom:16px;box-shadow:0 4px 18px rgba(217,119,6,.38);}
+  border-radius:12px;padding:8px 20px;text-align:center;font-size:17px;font-weight:700;
+  margin-bottom:10px;box-shadow:0 4px 18px rgba(217,119,6,.38);}
 
 /* 점수 헤더 */
-.score-header{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;margin-bottom:20px;align-items:stretch;}
-.score-box{background:#fff;border-radius:20px;padding:18px 24px;text-align:center;}
+.score-header{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;margin-bottom:10px;align-items:stretch;}
+.score-box{background:#fff;border-radius:16px;padding:10px 20px;text-align:center;}
 .score-box.a{border:2px solid var(--ta3);box-shadow:0 3px 14px rgba(239,83,80,.1);}
 .score-box.b{border:2px solid var(--tb3);box-shadow:0 3px 14px rgba(33,150,243,.1);}
-.score-lbl{font-size:16px;font-weight:700;color:var(--gy);margin-bottom:4px;}
-.score-num{font-size:56px;font-weight:900;line-height:1;}
+.score-lbl{font-size:14px;font-weight:700;color:var(--gy);margin-bottom:2px;}
+.score-num{font-size:44px;font-weight:900;line-height:1;}
 .score-num.a{color:var(--ta);}.score-num.b{color:var(--tb);}
-.round-mid{text-align:center;display:flex;flex-direction:column;justify-content:center;padding:8px 16px;}
-.round-lbl{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--br3);}
-.round-num{font-size:52px;font-weight:900;color:var(--br);line-height:1;}
+.round-mid{text-align:center;display:flex;flex-direction:column;justify-content:center;padding:4px 12px;}
+.round-lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--br3);}
+.round-num{font-size:40px;font-weight:900;color:var(--br);line-height:1;}
 .round-num.gold{color:var(--gd);}
-.round-tot{font-size:16px;color:var(--br3);margin-top:2px;}
+.round-tot{font-size:13px;color:var(--br3);margin-top:1px;}
 
 /* 진행 바 */
-.progress{display:flex;justify-content:center;gap:10px;margin-bottom:20px;}
-.prog-dot{height:10px;border-radius:5px;transition:all .3s ease;}
-.prog-dot.done{width:10px;background:var(--ap);}
-.prog-dot.cur{width:36px;background:var(--co);}
-.prog-dot.pend{width:10px;background:var(--pk);}
-.prog-dot.hid{width:36px;background:var(--gd);}
+.progress{display:flex;justify-content:center;gap:8px;margin-bottom:10px;}
+.prog-dot{height:8px;border-radius:4px;transition:all .3s ease;}
+.prog-dot.done{width:8px;background:var(--ap);}
+.prog-dot.cur{width:28px;background:var(--co);}
+.prog-dot.pend{width:8px;background:var(--pk);}
+.prog-dot.hid{width:28px;background:var(--gd);}
 
 /* 게임 본체 2열 레이아웃 */
-.game-body{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;min-height:0;}
-.game-left{display:flex;flex-direction:column;gap:14px;}
-.game-right{display:flex;flex-direction:column;}
+.game-body{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0;}
+.game-left{display:flex;flex-direction:column;gap:8px;min-height:0;}
+.game-right{display:flex;flex-direction:column;min-height:0;}
 
 /* 팀 패널 */
-.team-panel{border-radius:22px;padding:22px 26px;display:flex;flex-direction:column;flex:1;}
+.team-panel{border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;flex:1;min-height:0;}
 .team-panel.a{background:var(--ta2);border:2px solid var(--ta3);}
 .team-panel.b{background:var(--tb2);border:2px solid var(--tb3);}
-.team-name{text-align:center;font-size:26px;font-weight:900;margin-bottom:16px;}
+.team-name{text-align:center;font-size:20px;font-weight:900;margin-bottom:10px;}
 .team-panel.a .team-name{color:var(--ta);}.team-panel.b .team-name{color:var(--tb);}
-.sec-lbl{font-size:13px;font-weight:700;color:var(--gy);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;}
+.sec-lbl{font-size:11px;font-weight:700;color:var(--gy);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;}
 
 /* 카드 선택 버튼 */
-.card-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
-.card-btn{padding:22px 10px 18px;border-radius:18px;border:3px solid transparent;
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+.card-btn{padding:14px 8px 10px;border-radius:14px;border:3px solid transparent;
   background:#fff;cursor:pointer;transition:all .2s ease;font-family:inherit;
-  box-shadow:0 3px 10px rgba(0,0,0,.06);}
-.card-btn .c-emoji{font-size:44px;margin-bottom:8px;line-height:1;display:block;}
-.card-btn .c-lbl{font-size:15px;font-weight:700;color:var(--gy);display:block;}
+  box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.card-btn .c-emoji{font-size:34px;margin-bottom:5px;line-height:1;display:block;}
+.card-btn .c-lbl{font-size:13px;font-weight:700;color:var(--gy);display:block;}
 .card-btn.love.selected{background:var(--lo2);border-color:var(--lo);
-  box-shadow:0 6px 20px rgba(236,64,122,.25);transform:translateY(-4px);}
+  box-shadow:0 4px 14px rgba(236,64,122,.25);transform:translateY(-3px);}
 .card-btn.love.selected .c-lbl{color:var(--lo);}
 .card-btn.benefit.selected{background:var(--be2);border-color:var(--be);
-  box-shadow:0 6px 20px rgba(245,158,11,.25);transform:translateY(-4px);}
+  box-shadow:0 4px 14px rgba(245,158,11,.25);transform:translateY(-3px);}
 .card-btn.benefit.selected .c-lbl{color:var(--be);}
 
 /* 아이템 버튼 */
-.item-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.item-btn{position:relative;padding:12px 14px 10px;border-radius:14px;border:none;
-  font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .2s ease;}
-.item-btn .i-icon{font-size:20px;line-height:1;display:block;margin-bottom:3px;}
+.item-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.item-btn{position:relative;padding:8px 10px 7px;border-radius:12px;border:none;
+  font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .2s ease;}
+.item-btn .i-icon{font-size:16px;line-height:1;display:block;margin-bottom:2px;}
 .item-btn .i-lbl{display:block;}
 .item-btn.double{background:var(--dbl);color:var(--dbc);}
 .item-btn.switch{background:var(--swl);color:var(--swc);}
-.item-btn.double.on{background:var(--dbc);color:#fff;box-shadow:0 4px 16px rgba(124,58,237,.4);}
-.item-btn.switch.on{background:var(--swc);color:#fff;box-shadow:0 4px 16px rgba(8,145,178,.4);}
-.item-btn .badge{position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;
-  background:#FF5252;color:#fff;font-size:13px;font-weight:900;
+.item-btn.double.on{background:var(--dbc);color:#fff;box-shadow:0 3px 12px rgba(124,58,237,.4);}
+.item-btn.switch.on{background:var(--swc);color:#fff;box-shadow:0 3px 12px rgba(8,145,178,.4);}
+.item-btn .badge{position:absolute;top:-7px;right:-7px;width:20px;height:20px;border-radius:50%;
+  background:#FF5252;color:#fff;font-size:11px;font-weight:900;
   display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(255,82,82,.4);}
 .item-btn:disabled{opacity:.35;cursor:not-allowed;}
 
-.priority-note{background:rgba(255,255,255,.7);border-radius:12px;padding:10px 18px;
-  font-size:13px;color:var(--br3);text-align:center;border:1px solid var(--pk);}
+.priority-note{background:rgba(255,255,255,.7);border-radius:10px;padding:7px 14px;
+  font-size:12px;color:var(--br3);text-align:center;border:1px solid var(--pk);}
 
 /* 점수 기록 패널 (오른쪽 전체) */
-.hist-panel{background:#fff;border-radius:22px;padding:24px 28px;flex:1;
+.hist-panel{background:#fff;border-radius:18px;padding:16px 20px;flex:1;
   box-shadow:0 2px 14px rgba(176,96,64,.08);display:flex;flex-direction:column;overflow:auto;}
-.hist-panel h4{font-size:18px;font-weight:700;color:var(--br);margin-bottom:16px;}
-.hist-panel table{width:100%;border-collapse:collapse;font-size:16px;}
-.hist-panel th{padding:10px 6px;text-align:center;font-weight:700;color:var(--gy);border-bottom:2px solid var(--pk);}
+.hist-panel h4{font-size:16px;font-weight:700;color:var(--br);margin-bottom:12px;}
+.hist-panel table{width:100%;border-collapse:collapse;font-size:15px;}
+.hist-panel th{padding:8px 4px;text-align:center;font-weight:700;color:var(--gy);border-bottom:2px solid var(--pk);}
 .hist-panel th.a{color:var(--ta);}.hist-panel th.b{color:var(--tb);}
-.hist-panel td{text-align:center;padding:12px 6px;border-top:1px solid var(--pk);}
+.hist-panel td{text-align:center;padding:9px 4px;border-top:1px solid var(--pk);}
 .hist-panel tr.hidden-row td{background:var(--gdl);}
 .hist-empty{flex:1;display:flex;align-items:center;justify-content:center;
   color:var(--br3);font-size:15px;text-align:center;line-height:2;}
@@ -233,35 +233,35 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:linear-gradi
 /* ══════════════════════════════════
    FINAL 화면
 ══════════════════════════════════ */
-.final-page{min-height:100vh;padding:40px 80px;display:flex;align-items:flex-start;justify-content:center;
-  background:linear-gradient(160deg,var(--cr),var(--cr2));}
-.final-wrap{width:100%;max-width:1000px;padding-top:16px;}
-.winner-card{background:#fff;border-radius:28px;padding:40px 48px;text-align:center;
-  box-shadow:0 8px 36px rgba(176,96,64,.12);border:2px solid var(--ap);margin-bottom:24px;}
-.trophy{font-size:80px;margin-bottom:16px;line-height:1;}
-.winner-txt{font-size:48px;font-weight:900;margin-bottom:8px;}
-.winner-sub{font-size:20px;color:var(--br3);}
-.score-compare{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:28px;}
+.final-page{height:100vh;padding:20px 80px;display:flex;align-items:flex-start;justify-content:center;
+  background:linear-gradient(160deg,var(--cr),var(--cr2));overflow:hidden;}
+.final-wrap{width:100%;max-width:1000px;display:flex;flex-direction:column;height:100%;gap:14px;}
+.winner-card{background:#fff;border-radius:24px;padding:20px 40px;text-align:center;
+  box-shadow:0 8px 36px rgba(176,96,64,.12);border:2px solid var(--ap);}
+.trophy{font-size:52px;margin-bottom:8px;line-height:1;}
+.winner-txt{font-size:36px;font-weight:900;margin-bottom:4px;}
+.winner-sub{font-size:16px;color:var(--br3);}
+.score-compare{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:16px;}
 .sc-team{text-align:center;}
-.sc-team-lbl{font-size:18px;font-weight:700;margin-bottom:6px;}
+.sc-team-lbl{font-size:15px;font-weight:700;margin-bottom:4px;}
 .sc-team-lbl.a{color:var(--ta);}.sc-team-lbl.b{color:var(--tb);}
-.sc-big{font-size:72px;font-weight:900;line-height:1;}
+.sc-big{font-size:56px;font-weight:900;line-height:1;}
 .sc-big.a{color:var(--ta);}.sc-big.b{color:var(--tb);}
-.sc-love{font-size:16px;color:var(--gy);margin-top:6px;}
-.sc-colon{font-size:36px;color:var(--ap);font-weight:700;}
-.hist-card{background:#fff;border-radius:22px;padding:28px 32px;
-  box-shadow:0 3px 16px rgba(176,96,64,.08);margin-bottom:20px;}
-.hist-card h4{font-size:20px;font-weight:700;color:var(--br);margin-bottom:16px;}
-.hist-card table{width:100%;border-collapse:collapse;font-size:17px;}
-.hist-card th{padding:12px 8px;text-align:center;font-size:15px;font-weight:700;color:var(--gy);
+.sc-love{font-size:13px;color:var(--gy);margin-top:4px;}
+.sc-colon{font-size:28px;color:var(--ap);font-weight:700;}
+.hist-card{background:#fff;border-radius:18px;padding:16px 24px;
+  box-shadow:0 3px 16px rgba(176,96,64,.08);flex:1;overflow:auto;}
+.hist-card h4{font-size:16px;font-weight:700;color:var(--br);margin-bottom:10px;}
+.hist-card table{width:100%;border-collapse:collapse;font-size:15px;}
+.hist-card th{padding:8px 6px;text-align:center;font-size:13px;font-weight:700;color:var(--gy);
   background:var(--cr);border-bottom:2px solid var(--pk);}
 .hist-card th.a{color:var(--ta);}.hist-card th.b{color:var(--tb);}
-.hist-card td{text-align:center;padding:12px 8px;border-top:1px solid var(--pk);}
+.hist-card td{text-align:center;padding:8px 6px;border-top:1px solid var(--pk);}
 .hist-total{border-top:3px solid var(--ap)!important;background:var(--cr);}
 .hist-hidden{background:var(--gdl)!important;}
-.reflect{background:linear-gradient(135deg,var(--lo2),var(--pk));border-radius:20px;
-  padding:24px 32px;text-align:center;border:2px solid var(--ap);margin-bottom:24px;}
-.reflect p{font-size:19px;color:var(--br);line-height:1.9;}
+.reflect{background:linear-gradient(135deg,var(--lo2),var(--pk));border-radius:16px;
+  padding:14px 24px;text-align:center;border:2px solid var(--ap);}
+.reflect p{font-size:16px;color:var(--br);line-height:1.7;}
 
 .gn{color:var(--gn);font-weight:700;}.rd{color:var(--rd);font-weight:700;}.gy-w{color:var(--gy);font-weight:700;}
 </style>
@@ -622,16 +622,16 @@ function htmlFinal(){
         <tbody>
           ${histRows}
           <tr>
-            <td class="hist-total" style="font-weight:900;color:var(--br);font-size:18px">합계</td>
+            <td class="hist-total" style="font-weight:900;color:var(--br);font-size:15px">합계</td>
             <td class="hist-total"></td><td class="hist-total"></td>
-            <td class="hist-total" style="font-weight:900;color:var(--ta);font-size:20px">${A}</td>
-            <td class="hist-total" style="font-weight:900;color:var(--tb);font-size:20px">${B}</td>
+            <td class="hist-total" style="font-weight:900;color:var(--ta);font-size:17px">${A}</td>
+            <td class="hist-total" style="font-weight:900;color:var(--tb);font-size:17px">${B}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="reflect"><p>${reflect}</p></div>
-    <button class="btn-primary" onclick="restartGame()" style="margin-bottom:40px">🔄 다시 시작하기</button>
+    <button class="btn-primary" onclick="restartGame()" style="padding:14px;font-size:18px">🔄 다시 시작하기</button>
   </div>
   </div>`;
 }

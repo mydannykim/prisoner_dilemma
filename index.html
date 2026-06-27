@@ -282,7 +282,7 @@ function newGame(){S.screen='playing';S.round=1;S.scores={A:0,B:0};S.history=[];
 
 const tLb=t=>t==='A'?`🔴 ${S.teamA}`:`🔵 ${S.teamB}`;
 const scoreClass=n=>n>0?'gn':n<0?'rd':'gy-w';
-const scoreSign=n=>(n>0?'+'':'')+n;
+const scoreSign=n=>(n>0?'+':'')+n;
 const cardEmoji=c=>c==='love'?'❤️':'💰';
 const cardName=c=>c==='love'?'사랑 카드':'편익 카드';
 const isHidRound=()=>S.round>TR;
